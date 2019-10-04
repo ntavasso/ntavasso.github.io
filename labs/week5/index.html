@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000;
+        }
+        .student {
+            border-radius: 4px;
+            width: 100px;
+            height: 100px;
+            padding: 3px;
+            margin-top: 20px;
+            background-color: #eee;
+            color: #ef4b4b;
+        }
+        .arrow {
+            cursor: pointer;
+            color: #fff;
+            width: 15px;
+            height: 15px;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+            background: #7ecfc0;
+        }
+
+        .backArrow {
+            cursor: pointer;
+            color: #fff;
+            width: 15px;
+            height: 15px;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+            background: #7ecfc0;
+        }
+        .cardActive {
+            transition: transform .3s ease, opacity .3s ease;
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+        .cardOut {
+            transition: transform  .3s ease, opacity .3s ease;
+            transform: rotate(45deg);
+            opacity: 0;
+        }
+        .backCardOut {
+            transition: transform  .3s ease, opacity .3s ease;
+            transform: rotate(-45deg);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <student-card v-bind:student="currentStudent" v-bind:isactive="cardActive"></student-card>
+        
+
+        <div id="joycard">
+            <joy-card v-bind:student="currentStudent" v-bind:isactive="cardActive"></joy-card>
+            <div class="flexWrapper" style="display: flex;">
+                <div class="backArrow" v-on:click="backArrowClicked"> - </div>
+                <div class="arrow" v-on:click="arrowClicked"> + </div>
+                
+            </div>
+        </div>
+        <a href="https://github.com/ntavasso/n320Coursework/tree/master/labs/week5">Link to Code</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="app/app.js"></script>
+</body>
+</html>

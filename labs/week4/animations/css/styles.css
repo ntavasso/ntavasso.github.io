@@ -1,0 +1,92 @@
+#banner {
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+  /* background-color: red; */
+  display: flex;
+}
+
+#banner img {
+  width: 90%;
+  height: 100%;
+  animation: cardBuildIn 0.7s;
+  animation-fill-mode: both;
+}
+
+.grid {
+  padding-top: 50px;
+  width: 100%;
+  height: 200px;
+  justify-content: space-between;
+  /* background-color: red; */
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.pic {
+  margin-top: 50px;
+  margin-left: 50px; 
+  margin-right: 50px; 
+  width: 23%;
+  height: 100%;
+  animation: cardBuildIn 0.7s;
+  animation-fill-mode: both;
+  background-image: url("../images/sack.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.picOver {
+  animation: cardOverAnim 0.7s;
+  animation-fill-mode: both;
+}
+
+.picOut {
+  animation: cardOutAnim 0.7s;
+  animation-fill-mode: both;
+}
+
+.onClick {
+  animation: cardClickAnim 0.7s;
+  animation-fill-mode: both;
+}
+
+@keyframes cardBuildIn {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cardOverAnim {
+    from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+  /* } */
+}
+
+@keyframes cardOutAnim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes cardClickAnim {
+  from {
+    opacity: 1;
+    /* transform: scale(0.2); */
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.2);  }
+}
