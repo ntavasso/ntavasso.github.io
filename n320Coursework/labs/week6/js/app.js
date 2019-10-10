@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
         gameOver: false,
         playerTurn: 1,
+        player: 0,
         grid: [
             [0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0],
