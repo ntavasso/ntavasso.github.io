@@ -1,0 +1,25 @@
+{
+    "meta": {
+        "type": "top three"
+    },
+    "candy": [
+        {
+            "name": "Kit Kat",
+            "rating": "good",
+            "chocolate": true,
+            "deliciousness": 70
+        },
+        {
+            "name": "Reeses Cup",
+            "rating": "good",
+            "chocolate": true,
+            "deliciousness": 170
+        },
+        {
+            "name": "Dots",
+            "rating": "bad",
+            "chocolate": false,
+            "deliciousness": 80
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "movies": [
+        {
+            "name": "Titanic",
+            "rating": "***",
+            "streaming": {
+                "netflix": true,
+                "hulu": false,
+                "hbo": false
+            },
+            "cast": {
+                "Actors": [
+                    "Leo",
+                    "Kate",
+                    "Kathy"
+                ]
+            }
+        },
+        {
+            "name": "Benchwarmers",
+            "rating": "*****",
+            "streaming": {
+                "netflix": true,
+                "hulu": false,
+                "hbo": false
+            },
+            "cast": {
+                "Actors": [
+                    "Rob",
+                    "John",
+                    "Nick"
+                ]
+            }
+        },
+        {
+            "name": "Joker",
+            "rating": "*****",
+            "streaming": {
+                "netflix": false,
+                "hulu": false,
+                "hbo": false
+            },
+            "cast": {
+                "Actors": [
+                    "Joaquin",
+                    "Zazie",
+                    "Robert"
+                ]
+            }
+        }
+    ]
+}
