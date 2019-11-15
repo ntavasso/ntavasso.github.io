@@ -38,13 +38,12 @@ function createScene() {
 
   //White Material
   whiteMat = new BABYLON.StandardMaterial("whiteMat", scene);
-  whiteMat.diffuseColor = new BABYLON.Color3(0.1, 0.1, 0.1);
-  whiteMat.specularColor = new BABYLON.Color3(0, 0, 0);
+
 
   //Green Material
   greenMat = new BABYLON.StandardMaterial("greenMat", scene);
   greenMat.diffuseColor = new BABYLON.Color3(0, 1, 0);
-  greenMat.specularColor = new BABYLON.Color3(.5, 1, .2);
+  greenMat.specularColor = new BABYLON.Color3(.1, 1, .1);
   
     
 
@@ -94,7 +93,7 @@ window.addEventListener("keydown", (event) => {
 })
 
 window.addEventListener("click", function () {
-    // We try to pick an object
+    // pick an object
     var pickResult = scene.pick(scene.pointerX, scene.pointerY);
 
     selectedMesh = pickResult.pickedMesh;
