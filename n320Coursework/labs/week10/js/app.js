@@ -23,7 +23,27 @@ function createScene() {
     // var ground = BABYLON.MeshBuilder.CreateGround("ground", { height: 4, width: 4, subdivisions: 4 },
     //     scene);
 
-    sphere = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 2 }, scene);
+    var gravityVector = new BABYLON.Vector3(0, -9.81, 0);
+    var physicsPlugin = new BABYLON.CannonJSPlugin();
+    scene.enablePhysics(gravityVector, physicsPlugin);
+
+    sphere = BABYLON.MeshBuilder.CreateSphere("s", { diameter: 2 }, scene);
+
+    var mat = new BABYLON.StandardMaterial("base", scene);
+    mat.diffuseTexture = new BABYLON.Texture("textures/texture.jpeg", scene);
+
+    sphere.material = mat;
+
+    sphere.physicsImpostor = new BABYLON.PhysicsImpostor(s, BABYLON.PhysicsImpostor.SphereImpostor, { mass:1, restitution:0 }, scene);
+
+    sphere.physicsImpostor.physicsBody.linearDamping = .6;
+    sphere.physicsImpostor.physicsBody.angularDamping = .5;
+    sphere.friction = 2;
+
+
+    var ground = BABYLON.MeshBuilder.CreateGround("ground", { height: 4, width: 4, subdivisions: 4 }, scene);
+    ground.physicsImpostor = new BABYLON.PhysicsImpostor(ground, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0, restitution: 0.9 }, scene);
+    ground.physicsImpostor.friction = 10;
 
 
     return scene;
@@ -32,11 +52,11 @@ function createScene() {
 scene = createScene();
 engine.runRenderLoop(function () {
 
-    t += .01;
+    // t += .01;
 
-    sphere.scaling.x += Math.sin(t);
-    sphere.scaling.y += Math.sin(t);
-    sphere.scaling.z += Math.sin(t);
+    // sphere.scaling.x += Math.sin(t);
+    // sphere.scaling.y += Math.sin(t);
+    // sphere.scaling.z += Math.sin(t);
     scene.render();
 
 });

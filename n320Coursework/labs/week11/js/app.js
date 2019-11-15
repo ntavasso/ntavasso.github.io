@@ -1,79 +1,192 @@
-var canvas = document.getElementById("renderCanvas");
-var engine = new BABYLON.Engine(canvas, true);
-var camera, sphere, blueMat;
 
+
+// var canvas = document.getElementById("renderCanvas"); // Get the canvas element 
+// var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+// var camera;
+
+// var sphere, light, blueMat;
+// var selectedMesh = null;
+
+// var scene = createScene(); //Call the createScene function
+
+// function createScene() {
+
+//   // Create the scene space
+//   var scene = new BABYLON.Scene(engine);
+
+//   // Add a camera to the scene and attach it to the canvas
+//   camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 4, 4, BABYLON.Vector3.Zero(), scene);
+//   camera.attachControl(canvas, true);
+
+//   // Add lights to the scene
+//   var myLight = new BABYLON.DirectionalLight("dir01", new BABYLON.Vector3(0, -0.5, 1.0), scene);
+
+//   // Add and manipulate meshes in the scene
+//   sphere = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: .7 }, scene);
+//   var leftSphere = BABYLON.MeshBuilder.CreateSphere("sphere2", { diameter: .9 }, scene);
+//   leftSphere.position.x = 1;
+//   var rightSphere = BABYLON.MeshBuilder.CreateSphere("sphere2", { diameter: .5 }, scene);
+//   rightSphere.position.x = -1;
+
+//   //spheres are dependent on middle one
+//   sphere.addChild(leftSphere);
+//   sphere.addChild(rightSphere);
+//   light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(1, 1, 0), scene);
+
+//   //blue material
+//   blueMat = new BABYLON.StandardMaterial("ground", scene);
+//   blueMat.diffuseColor = new BABYLON.Color3(0.4, 0.4, 0.4);
+//   blueMat.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
+//   blueMat.emissiveColor = BABYLON.Color3.Blue();
+
+//   //white material
+//   whiteMat = new BABYLON.StandardMaterial("ground", scene);
+//   whiteMat.diffuseColor = new BABYLON.Color3(0.4, 0.4, 0.4);
+//   whiteMat.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
+//   whiteMat.emissiveColor = BABYLON.Color3.White();
+
+//   return scene;
+// };
+
+
+// // Register a render loop to repeatedly render the scene
+// engine.runRenderLoop(function () {
+
+//   //sphere.rotate(BABYLON.Axis.Y, .01, BABYLON.Space.WORLD);
+//   scene.render();
+// });
+
+
+// function checkUp() {
+//   console.log(selectedMesh.rotation.y)
+// }
+
+// window.addEventListener("keydown", (event) => {
+
+//   if (selectedMesh) {
+//     if (event.keyCode == 87) {
+//       TweenLite.to(selectedMesh.rotation, 1, { x: "+=20", onComplete: checkUp });
+//     }
+//   }
+
+// })
+
+// window.addEventListener("click", function () {
+//   // We try to pick an object
+//   var pickResult = scene.pick(scene.pointerX, scene.pointerY);
+//   var lastPickResult = scene.pick(scene.pointerX, scene.pointerY);
+
+//   pickResult.pickedMesh.material = blueMat;
+
+//   selectedMesh = pickResult.pickedMesh;
+// })
+
+var canvas = document.getElementById("renderCanvas"); // Get the canvas element 
+var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+var camera;
+
+var obj1, lock2, lock3, light, blueMat, whiteMat, greenMat;
 var selectedMesh = null;
 
-var scene = createScene();
+var scene = createScene(); //Call the createScene function
 
 function createScene() {
-    // Create the scene space
-    var scene = new BABYLON.Scene(engine);
 
-    // Add a camera to the scene and attach it to the canvas
-    camera = new BABYLON.ArcRotateCamera("Camera",
-        Math.PI / 2, Math.PI / 4,
-        4, BABYLON.Vector3.Zero(),
-        scene);
+  // Create the scene space
+  var scene = new BABYLON.Scene(engine);
 
-    camera.attachControl(canvas, true);
+  // Add a camera to the scene and attach it to the canvas
+  camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 4, 4, BABYLON.Vector3.Zero(), scene);
+  
+  
+  // Add lights to the scene
+  var myLight = new BABYLON.DirectionalLight("dir01", new BABYLON.Vector3(0, -0.5, 1.0), scene);
 
-    //adding objects
-    sphere = BABYLON
-        .MeshBuilder
-        .CreateSphere("sphere", { diameter: .7 }, scene);
+  // Add and manipulate meshes in the scene
+  obj1 = BABYLON.MeshBuilder.CreateBox("cube1", {height: ".5", width: ".5", depth: ".5"}, scene);
+  obj2 = BABYLON.MeshBuilder.CreateBox("cube2", {height: ".5", width: ".5", depth: ".5"}, scene);
+  obj3 = BABYLON.MeshBuilder.CreateBox("cube3", {height: ".5", width: ".5", depth: ".5"}, scene);
 
-    var lesserSphere = BABYLON
-        .MeshBuilder
-        .CreateSphere("sphere", { diameter: .3 }, scene);
-    lesserSphere.position.z = 1;
+  //set position of cubes  
+  obj1.position.x = 1;
+  obj2.position.x = 0;
+  obj3.position.x = -1;
+  
+  light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(1, 1, 0), scene);
 
-    //makes lessersphere a child, it basically sticks to sphere and reacts off of what it is set to do
-    sphere.addChild(lesserSphere);
+  //Blue Material
+  blueMat = new BABYLON.StandardMaterial("blueMat", scene);
+  blueMat.diffuseColor = new BABYLON.Color3(0, 0, 1);
+  blueMat.specularColor = new BABYLON.Color3(0.2, 0.2, 0.87);
 
-    //add light
-    var light = new BABYLON.HemisphericLight("Hemilight",
-        new BABYLON.Vector3(1, 1, 0), scene);
+  //White Material
+  whiteMat = new BABYLON.StandardMaterial("whiteMat", scene);
+  whiteMat.diffuseColor = new BABYLON.Color3(0.1, 0.1, 0.1);
+  whiteMat.specularColor = new BABYLON.Color3(0, 0, 0);
 
-    light.diffuse = new BABYLON.Color3(1, 0, 1);
-    light.specular = new BABYLON.Color3(1, 0, 0);
+  //Green Material
+  greenMat = new BABYLON.StandardMaterial("greenMat", scene);
+  greenMat.diffuseColor = new BABYLON.Color3(0, 1, 0);
+  greenMat.specularColor = new BABYLON.Color3(.5, 1, .2);
+  
+    
 
-    //blue material
-    blueMat = new BABYLON.StandardMaterial("ground", scene);
-    blueMat.diffuseColor = new BABYLON.Color3(0.4, 0.4, 0.4);
-    blueMat.specularColor = new BABYLON.Color3(0.4, 0.4, 0.4);
-    blueMat.emissiveColor = BABYLON.Color3.Blue();
-
-    return scene;
-
+  
+  return scene;
 };
-// key triggers animation
-window.addEventListener("keydown", function (event) {
-    //keydown makes it move 1 everytime
-    // TweenMax.to(sphere.position, 1.2, { x: "+=1" });
-    //makes the sphere rotate
-    // TweenMax.to(sphere.rotation, 1.2, { x: "+=20" });
-    if (event.keyCode == 87) {
 
-        if (selectedMesh) {
-            TweenMax.to(selectedMesh.rotation, 1.2, { x: "+=20", onComplete: checkOver });
-        }
+
+// Register a render loop to repeatedly render the scene
+engine.runRenderLoop(function () { 
+  scene.render();
+});
+
+//checks for match
+function checkUp() {
+    console.log(selectedMesh.rotation.y)
+    if(obj1.rotation.x == obj2.rotation.x && obj2.rotation.x == obj3.rotation.x) {
+      //all objects change color to green
+        obj1.material = greenMat;
+        obj2.material = greenMat;
+        obj3.material = greenMat;
+    
+    } else {
+      //objects stay as is
+        obj1.material = whiteMat;
+        obj2.material = whiteMat;
+        obj3.material = whiteMat;
+        selectedMesh.material = blueMat;
     }
-})
-
-function checkOver() {
-    console.log(selectedMesh.rotation.x);
 }
 
+window.addEventListener("keydown", (event) => {
+
+    if(selectedMesh) {
+      //W key code
+        if(event.keyCode == 87) {
+            TweenLite.to(selectedMesh.rotation, .1, { x: "-=.2", onComplete: checkUp });
+            
+        }
+        //S key code
+        if(event.keyCode == 83) {
+            TweenLite.to(selectedMesh.rotation, .1, { x: "+=.2", onComplete: checkUp });
+
+        }
+    }
+
+})
+
 window.addEventListener("click", function () {
-    //we try to pick an object
+    // We try to pick an object
     var pickResult = scene.pick(scene.pointerX, scene.pointerY);
 
-    pickResult.pickedMesh.material = blueMat;
     selectedMesh = pickResult.pickedMesh;
-})
-engine.runRenderLoop(function () {
+    //set all to white
+    obj1.material = whiteMat;
+    obj2.material = whiteMat;
+    obj3.material = whiteMat;
+    //set selected to blue
+    selectedMesh.material = blueMat;
 
-    scene.render();
+ })
 
-});
