@@ -1,0 +1,57 @@
+{
+  "name": "final2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "camelcase-keys": "^2.1.0",
+    "find-up": "^1.1.2",
+    "form-data": "^2.3.3",
+    "is-finite": "^1.0.2",
+    "is-fullwidth-code-point": "^1.0.0",
+    "jsbn": "^0.1.1",
+    "json-schema": "^0.2.3",
+    "json-schema-traverse": "^0.4.1",
+    "json-stringify-safe": "^5.0.1",
+    "lcid": "^1.0.0",
+    "lodash": "^4.17.15",
+    "map-obj": "^1.0.1",
+    "mime-db": "^1.42.0",
+    "minimatch": "^3.0.4",
+    "mime-types": "^2.1.25",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "nopt": "^3.0.6",
+    "number-is-nan": "^1.0.1",
+    "oauth-sign": "^0.9.0",
+    "object-assign": "^4.1.1",
+    "os-homedir": "^1.0.2",
+    "os-locale": "^1.4.0",
+    "os-tmpdir": "^1.0.2",
+    "osenv": "^0.1.5",
+    "parse-json": "^2.2.0",
+    "path-is-absolute": "^1.0.1",
+    "path-exists": "^2.1.0",
+    "path-type": "^1.1.0",
+    "path-parse": "^1.0.6",
+    "performance-now": "^2.1.0",
+    "pify": "^2.3.0",
+    "pinkie-promise": "^2.0.1",
+    "pinkie": "^2.0.4",
+    "pseudomap": "^1.0.2",
+    "process-nextick-args": "^2.0.1",
+    "punycode": "^2.1.1",
+    "psl": "^1.5.0",
+    "qs": "^6.5.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/styles.scss css/styles.css -w"
+
+  },
+  "author": "",
+  "license": "ISC"
+}

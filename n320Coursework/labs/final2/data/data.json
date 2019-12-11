@@ -1,0 +1,197 @@
+{
+    "appetizers": [
+        {
+            "name": "Breadsticks",
+            "description": "Delcious yum yum",
+            "nutrition": [
+                {
+                    "calories": 100,
+                    "protein": "10 grams",
+                    "carbs": "40 grams",
+                    "fat": "20 grams"
+                }
+            ],
+            "serving": 2,
+            "rating": "***",
+            "price": 3.99,
+            "photo": "images/breadsticks.png"
+
+        },
+        {
+            "name": "Salad",
+            "description": "Delicious yum yum",
+            "nutrition": [
+                {
+                    "calories": 200,
+                    "protein": "5 grams",
+                    "carbs": "30 grams",
+                    "fat": "20 grams"
+                }
+            ],
+            "serving": 3,
+            "rating": "***",
+            "price": 4.99,
+            "photo": "images/salad.png"
+
+        },
+        {
+            "name": "Macaroni",
+            "description": "Delcious yum yum",
+            "nutrition": [
+                {
+                    "calories": 400,
+                    "protein": "10 grams",
+                    "carbs": "60 grams",
+                    "fat": "30 grams"
+                }
+            ],
+            "serving": 4,
+            "rating": "****",
+            "price": 9.99,
+            "photo": "images/macaroni.jpg"
+
+        },
+        {
+            "name": "Soup",
+            "description": "Delcious yum yum",
+            "nutrition": [
+                {
+                    "calories": 150,
+                    "protein": "10 grams",
+                    "carbs": "20 grams",
+                    "fat": "30 grams"
+                }
+            ],
+            "serving": 1,
+            "rating": "***",
+            "price": 7.99,
+            "photo": "images/soup.jpg"
+
+        }
+    ],
+    "entrees": [
+        {
+            "name": "Pizza",
+            "description": "Delcious yum yum",
+            "nutrition": [
+                {
+                    "calories": 600,
+                    "protein": "30 grams",
+                    "carbs": "80 grams",
+                    "fat": "25 grams"
+                }
+            ],
+            "serving": 4,
+            "rating": "***",
+            "price": 13.99,
+            "photo": "images/pizza.jpg"
+
+        },
+        {
+            "name": "Spaghetti",
+            "description": "Delcious yum yum",
+            "nutrition": [
+                {
+                    "calories": 700,
+                    "protein": "35 grams",
+                    "carbs": "85 grams",
+                    "fat": "25 grams"
+                }
+            ],
+            "serving": 4,
+            "rating": "****",
+            "price": 12.99,
+            "photo": "images/spaghetti.jpg"
+
+        },
+        {
+            "name": "Lasagna",
+            "description": "Delcious yum yum",
+            "nutrition": [
+                {
+                    "calories": 600,
+                    "protein": "30 grams",
+                    "carbs": "80 grams",
+                    "fat": "25 grams"
+                }
+            ],
+            "serving": 4,
+            "rating": "***",
+            "price": 14.99,
+            "photo": "images/lasgana.jpg"
+
+        },
+        {
+            "name": "Ravioli",
+            "description": "Delcious yum yum",
+            "nutrition": [
+                {
+                    "calories": 400,
+                    "protein": "20 grams",
+                    "carbs": "60 grams",
+                    "fat": "20 grams"
+                }
+            ],
+            "serving": 2,
+            "rating": "***",
+            "price": 14.99,
+            "photo": "images/ravioli.jpg"
+
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Wine",
+            "description": "Delcious yum yum",
+            "nutrition": [
+                {
+                    "calories": 100,
+                    "protein": "0 grams",
+                    "carbs": "10 grams",
+                    "fat": "0 grams"
+                }
+            ],
+            "serving": 1,
+            "rating": "***",
+            "price": 8.99,
+            "photo": "images/wine.jpg"
+
+        },
+        {
+            "name": "Water",
+            "description": "Delcious yum yum",
+            "nutrition": [
+                {
+                    "calories": 0,
+                    "protein": "0 grams",
+                    "carbs": "0 grams",
+                    "fat": "0 grams"
+                }
+            ],
+            "serving": 1,
+            "rating": "***",
+            "price": 0,
+            "photo": "images/water.jpg"
+
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Cake",
+            "description": "Delcious yum yum",
+            "nutrition": [
+                {
+                    "calories": 900,
+                    "protein": "10 grams",
+                    "carbs": "100 grams",
+                    "fat": "40 grams"
+                }
+            ],
+            "serving": 3,
+            "rating": "****",
+            "price": 8.99,
+            "photo": "images/cake.jpg"
+
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+#app {
+  #canvas {
+    background-image: url("/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    // background-position: center;
+    /* background-color: #f5e5d5; */
+    min-width: 1000px;
+    min-height: 650px;
+    margin: auto 0;
+    justify-content: center;
+    /* display: flex; */
+
+    .container {
+      padding-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      
+
+      ul {
+        width: 350px;
+        border: 1px solid white;
+        border-radius: 15px;
+        list-style-type: none;
+        letter-spacing: 2px;
+        font-family: "Lobster", cursive;
+        text-align: left;
+        background-color: #C1B68E;
+        opacity: .85;
+        animation: cardBuildIn 0.7s;
+
+
+
+        h1 {
+          font-family: "Lobster", cursive;
+          letter-spacing: 2px;
+          color: red;
+          // text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+          
+        }
+        li {
+          font-size: 20px;
+          color: #1B592C;
+          cursor: pointer;
+          // text-shadow: -1px -1px 0 rgb(255, 0, 0), 1px -1px 0 rgb(255, 0, 0), -1px 1px 0 rgb(255, 20, 20), 1px 1px 0 rgb(248, 0, 0);
+          padding-bottom: 20px;
+          padding-right: 20px;
+          &:hover{
+            color: red;
+          }
+
+          // animation: cardOverAnim .7s;
+
+        }
+      }
+    }
+    .imageWrapper {
+      position: absolute;
+      top: 0;
+      left: 33%;
+      // width: 500px;
+        // background-color: blue;
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      width: 500px;
+      margin-top: 100px;
+
+      img{
+        height:100%;
+        width:100%;
+        animation: cardBuildIn 0.7s;
+
+      }
+
+      p{
+        animation: cardBuildIn 0.7s;
+        letter-spacing: 2px;
+        font-family: "Lobster", cursive;
+      }
+
+    }
+  }
+}
+@keyframes cardBuildIn {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  to {
+    opacity: .85;
+  }
+}
+@keyframes cardOverAnim {
+  to {
+    opacity: 1;
+    background-color: #FF0;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes cardOutAnim {
+  from {
+    opacity: 1;
+    transform: scale(1.2);
+    background-color: #FFFF00;
+  }
+  
+  to {
+    opacity: 1;
+    transform: scale(1);
+    background-color: #FFF;
+  }
+}
