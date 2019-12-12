@@ -9,7 +9,7 @@ var soundElements = [];
 
 //loop through all sounds and create audio tags
 sounds.forEach((soundURL, idx) => {
-    
+
     //sound names
     var soundNames = ["chimes", "click", "pop", "puff", "rustle"];
 
@@ -21,7 +21,8 @@ sounds.forEach((soundURL, idx) => {
 
     //create the button to play sound
     var newButton = document.createElement("button");
-    newButton.innerHTML = soundNames ;
+    //set buttons to sound names array idx values
+    newButton.innerHTML = soundNames[idx];
 
     //store the sounds index
     newButton.setAttribute("data-sound-id", idx);
