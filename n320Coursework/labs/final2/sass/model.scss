@@ -1,0 +1,37 @@
+#modelWrapper {
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-width: 100%;
+  min-height: 650px;
+  animation: cardBuildIn 0.7s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    margin: auto 0;
+    text-decoration: none;
+    font-size: 22px;
+    background-color: #afa27f;
+    border-radius: 10px;
+    text-align: center;
+    width: 20%;
+    letter-spacing: 2px;
+    font-family: "Lobster", cursive;
+
+    a {
+      text-decoration: none;
+      color: red;
+    }
+  }
+}
+@keyframes cardBuildIn {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  to {
+    opacity: 0.85;
+  }
+}
