@@ -1,5 +1,5 @@
 #app #canvas {
-  background-image: url("/images/background.JPG");
+  background-image: url("n320Coursework/labs/final2/images/background.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   /* background-color: #f5e5d5; */
@@ -79,7 +79,7 @@
     background-color: #FFF; } }
 
 body {
-  background-image: url("/images/background.JPG");
+  background-image: url("n320Coursework/labs/final2/images/background.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   /* background-color: #f5e5d5; */
@@ -130,7 +130,7 @@ body {
     opacity: 0.85; } }
 
 #modelWrapper {
-  background-image: url("/images/background.JPG");
+  background-image: url("n320Coursework/labs/final2/images/background.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   min-width: 100%;
