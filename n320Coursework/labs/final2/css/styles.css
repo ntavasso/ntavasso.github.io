@@ -80,7 +80,6 @@
 
 body {
   background-image: url("./images/background.jpg");
-
   background-repeat: no-repeat;
   background-size: 100%;
   /* background-color: #f5e5d5; */
@@ -132,7 +131,6 @@ body {
 
 #modelWrapper {
   background-image: url("./images/background.jpg");
-
   background-repeat: no-repeat;
   background-size: 100%;
   min-width: 100%;
