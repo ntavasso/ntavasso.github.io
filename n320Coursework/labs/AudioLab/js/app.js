@@ -1,10 +1,11 @@
 var soundButtons = document.getElementById("soundButtons");
 
-
+//sounds arrays
 var sounds = [
     "chimes_long.mp3", "click_clock_loop.mp3", "pop_10.mp3", "puff.mp3", "rustle_5.mp3"
 ];
 
+//soundElements array
 var soundElements = [];
 
 //loop through all sounds and create audio tags
