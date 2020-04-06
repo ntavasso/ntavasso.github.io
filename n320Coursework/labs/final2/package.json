@@ -19,7 +19,7 @@
     "mime-db": "^1.42.0",
     "minimatch": "^3.0.4",
     "mime-types": "^2.1.25",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "mkdirp": "^0.5.1",
     "nopt": "^3.0.6",
     "number-is-nan": "^1.0.1",
